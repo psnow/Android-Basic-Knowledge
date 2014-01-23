@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.neiyo.demos.activitylaunchmode"
+    android:versionCode="102"
+    android:versionName="1.2" >
+
+    <uses-sdk android:minSdkVersion="4" >
+    </uses-sdk>
+
+    <application
+        android:name=".BaseApplication"
+        android:icon="@drawable/icon"
+        android:label="LaunchModelDemo" >
+        <activity android:name=".StandardA" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" >
+                </action>
+
+                <category android:name="android.intent.category.LAUNCHER" >
+                </category>
+            </intent-filter>
+        </activity>
+        <activity android:name=".StandardB" >
+        </activity>
+        <activity
+            android:name=".TaskAffinityD"
+            android:taskAffinity="new.task">
+        </activity>
+        <activity
+            android:name=".TaskAffinityC"
+            android:taskAffinity="new.task">
+        </activity>
+        <activity
+            android:name=".SingleInstance"
+            android:launchMode="singleInstance" >
+        </activity>
+    </application>
+
+    <uses-permission android:name="android.permission.GET_TASKS" >
+    </uses-permission>
+
+</manifest>
